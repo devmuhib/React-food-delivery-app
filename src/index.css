@@ -42,3 +42,14 @@ h2 {
 section {
   padding: 60px 0px;
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 40px 0px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+}
