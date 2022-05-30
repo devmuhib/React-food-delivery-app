@@ -17,9 +17,14 @@ const AllFoods = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const searchedProduct = products.filter((item) => {
-    if (searchTerm.value === "") return item;
-    if (item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    if (searchTerm.value === "") {
       return item;
+    }
+    if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return item;
+    } else {
+      return console.log("not found");
+    }
   });
 
   const productPerPage = 12;
