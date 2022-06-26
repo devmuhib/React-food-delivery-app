@@ -70,3 +70,9 @@
   color: #212245;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 576px) {
+  .cart {
+    width: 300px !important;
+  }
+}
