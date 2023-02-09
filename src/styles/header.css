@@ -69,6 +69,14 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .logo img {
+    width: calc(100% - 70%);
+  }
+  .logo h5 {
+    font-size: 0.8rem;
+    margin-top: -15px;
+  }
+
   .navigation {
     position: fixed;
     top: 0;
@@ -98,6 +106,15 @@
   }
 
   .mobile__menu {
+    display: block;
+  }
+
+  .cart__icon i,
+  .mobile__menu i {
+    font-size: 1rem;
+  }
+
+  .show__menu {
     display: block;
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink } from "react-router-dom";
 import { Container } from "reactstrap";
@@ -17,6 +17,8 @@ const nav__links = [
 ];
 
 const Header = () => {
+  const menuRef = useRef(null);
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
   return (
     <header className="header">
       <Container>
@@ -27,10 +29,11 @@ const Header = () => {
           </div>
 
           {/* ___ menu ___ */}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef}>
             <div className="menu d-flex align-items-center gap-5">
               {nav__links.map((item, index) => (
                 <NavLink
+                  onClick={toggleMenu}
                   to={item.path}
                   key={index}
                   className={(navClass) =>
@@ -51,7 +54,7 @@ const Header = () => {
               <span className="cart__badge">2</span>
             </span>
 
-            <span className="mobile__menu">
+            <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>
             </span>
           </div>
