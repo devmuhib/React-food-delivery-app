@@ -22,7 +22,7 @@ const Footer = () => {
             <ListGroup>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
                 <span>Friday - Tuesday</span>
-                <p>10:00am - 11:00 pm</p>
+                <p>10:00am - 11:00pm</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0  ">
                 <span>Wednesday - Thursday</span>

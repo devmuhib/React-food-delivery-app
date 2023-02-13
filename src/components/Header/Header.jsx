@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import logo from "../../assets/images/res-logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Container } from "reactstrap";
 
 import "../../styles/header.css";
@@ -23,10 +23,12 @@ const Header = () => {
     <header className="header">
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
-          <div className="logo">
-            <img src={logo} alt="logo" />
-            <h5>MyPizza</h5>
-          </div>
+          <Link to="/home">
+            <div className="logo">
+              <img src={logo} alt="logo" />
+              <h5>MyPizza</h5>
+            </div>
+          </Link>
 
           {/* ___ menu ___ */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
