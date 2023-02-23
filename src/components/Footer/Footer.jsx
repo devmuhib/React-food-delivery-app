@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
 import logo from "../../assets/images/res-logo.png";
-
 import "../../styles/footer.css";
 
 const Footer = () => {
@@ -11,22 +10,22 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg="3" md="4" sm="6">
-            <div className=" footer__logo text-start">
+            <div className="footer__logo text-center text-md-start">
               <img src={logo} alt="logo" />
               <h5>MyPizza</h5>
               <p>Best Pizzas in town, try it out!</p>
             </div>
           </Col>
-          <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Delifery Time</h5>
+          <Col lg="3" md="4" sm="6" className="text-center mx-auto">
+            <h5 className="footer__title">Delivery Time</h5>
             <ListGroup>
-              <ListGroupItem className=" delivery__time-item border-0 ps-0">
+              <ListGroupItem className="delivery__time-item border-0 ps-0">
                 <span>Friday - Tuesday</span>
                 <p>10:00am - 11:00pm</p>
               </ListGroupItem>
-              <ListGroupItem className=" delivery__time-item border-0 ps-0  ">
+              <ListGroupItem className="delivery__time-item border-0 ps-0">
                 <span>Wednesday - Thursday</span>
-                <p>Off day </p>
+                <p>Off day</p>
               </ListGroupItem>
             </ListGroup>
           </Col>

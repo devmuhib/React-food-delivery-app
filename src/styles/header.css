@@ -1,31 +1,31 @@
 .header {
   width: 100%;
-  height: 80%;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
 }
 
 .logo {
   text-align: center;
 }
-
 .logo img {
   width: calc(100% - 60%);
   object-fit: contain;
+  margin-top: -40px;
 }
 
 .logo h5 {
   font-weight: 600;
   font-size: 1rem;
-  color: #212235;
-  margin-top: -10px;
+  color: #212245;
+  margin-top: -40px;
   margin-bottom: 0;
-  transition: 0.3s;
 }
 
 .menu a {
   font-weight: 600;
   font-size: 1rem;
   color: #212245;
+  transition: 0.3s;
 }
 
 .menu a:hover {
@@ -37,9 +37,10 @@
 }
 
 .cart__icon i,
+.user i,
 .mobile__menu i {
   font-size: 1.3rem;
-  color: #214525;
+  color: #212245;
   cursor: pointer;
 }
 
@@ -49,7 +50,7 @@
 
 .cart__badge {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: -10px;
   background: #df2020;
   color: #fff;
@@ -72,6 +73,8 @@
   position: sticky;
   top: 0;
   left: 0;
+  background: #fff;
+  z-index: 99999;
   box-shadow: 5px 5px 15px -5px #fde4e4;
 }
 
@@ -94,6 +97,7 @@
     z-index: 99;
     display: none;
   }
+
   .menu {
     position: absolute;
     top: 0;
@@ -117,6 +121,7 @@
   }
 
   .cart__icon i,
+  .user i,
   .mobile__menu i {
     font-size: 1rem;
   }
@@ -129,11 +134,14 @@
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
+    line-height: 80px;
   }
 
+  .logo img {
+    margin-top: -70px !important;
+  }
   .logo h5 {
-    margin-top: 0px;
+    margin-top: -55px;
   }
 }

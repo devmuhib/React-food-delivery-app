@@ -40,9 +40,9 @@
   font-weight: 600;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .footer__title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .delivery__time-item span {
@@ -50,7 +50,7 @@
   }
 
   .delivery__time-item p {
-    font-style: 0.7rem;
+    font-size: 0.7rem;
     margin-bottom: 0;
   }
 }

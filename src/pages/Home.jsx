@@ -1,5 +1,4 @@
 import React from "react";
-
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 
@@ -30,8 +29,9 @@ const Home = () => {
             </Col>
 
             <Col lg="6" md="6">
-              <div className="hero__img"> </div>
-              <img src={guyImg} alt="delivery-guy" className="w-75" />
+              <div className="hero__img">
+                <img src={guyImg} alt="delivery-guy" className="w-100" />
+              </div>
             </Col>
           </Row>
         </Container>
