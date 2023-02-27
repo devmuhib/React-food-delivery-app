@@ -6,6 +6,7 @@ import products from "../assets/fake-data/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import Helmet from "../components/Helmet/Helmet";
 import ReactPaginate from "react-paginate";
+import "../styles/pagination.css";
 
 const Pizzas = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -34,7 +35,7 @@ const Pizzas = () => {
               <ProductCard item={item} />
             </Col>
           ))}
-          <div>
+          <div className="d-flex justify-content-center mt-4 mb-4">
             <ReactPaginate
               pageCount={pageCount}
               onPageChange={changePage}
