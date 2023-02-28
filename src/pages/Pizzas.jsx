@@ -13,7 +13,7 @@ const Pizzas = () => {
 
   const searchedProduct = products;
 
-  const productPerPage = 12;
+  const productPerPage = 4;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedProduct.slice(
     visitedPage,
