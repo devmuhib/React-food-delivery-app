@@ -3,6 +3,8 @@
   text-align: center;
   padding: 30px;
   cursor: pointer;
+  height: 100%;
+  min-height: 19rem;
 }
 
 .product__img {
