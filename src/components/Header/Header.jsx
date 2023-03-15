@@ -63,10 +63,9 @@ const Header = () => {
             <img src={logo} alt="logo" />
             <h5>Tasty Treat</h5>
           </div>
-
-          {/* ======= menu ======= */}
+              {/* ======= menu ======= */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
-            <div className="menu d-flex align-items-center gap-5">
+            <div className="menu d-flex align-items-center gap-5"  onClick={(event) => event.stopPropagation()}>
               {nav__links.map((item, index) => (
                 <NavLink
                   to={item.path}
@@ -80,6 +79,7 @@ const Header = () => {
               ))}
             </div>
           </div>
+
 
           {/* ======== nav right icons ========= */}
           <div className="nav__right d-flex align-items-center gap-4">

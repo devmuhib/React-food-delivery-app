@@ -18,8 +18,8 @@ const Carts = () => {
     dispatch(cartUiActions.toggle());
   };
   return (
-    <div className="cart__container">
-      <ListGroup className="cart">
+    <div className="cart__container" onClick={toggleCart}>
+      <ListGroup onClick={(event) => event.stopPropagation()} className="cart">
         <div className="cart__close">
           <span onClick={toggleCart}>
             <i class="ri-close-fill"></i>
