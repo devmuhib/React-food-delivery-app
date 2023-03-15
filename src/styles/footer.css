@@ -1,11 +1,14 @@
 .footer {
   padding: 50px 0px;
   background: #fde4e4;
+  display: flex;
+  text-align: start;
+  justify-content: space-evenly;
 }
 
 .footer__logo img {
-  width: calc(100% - 80%);
-  margin-bottom: 5px;
+  width: calc(100% - 70%);
+  margin-bottom: 1.5rem;
 }
 
 .footer__logo h5 {
@@ -41,6 +44,15 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__logo img {
+    width: calc(100% - 85%);
+  }
+
   .footer__title {
     font-size: 0.9rem;
   }
