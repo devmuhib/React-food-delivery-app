@@ -11,7 +11,7 @@ const Layout = () => {
   const showCart = useSelector((state) => state.cartUi.cartIsVisible);
 
   return (
-    <div>
+    <div className="d-flex flex-column vh-100 justify-content-between">
       <Header />
       {showCart && <Carts />}
       <div>

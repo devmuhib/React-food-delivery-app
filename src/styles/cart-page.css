@@ -14,6 +14,11 @@ th {
   cursor: pointer;
 }
 
+.cart__page-btn {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .cart__page-btn button a:hover {
   color: #fff;
 }
