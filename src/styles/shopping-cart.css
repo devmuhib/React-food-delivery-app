@@ -20,7 +20,7 @@
 
 .cart__item-list {
   height: calc(100vh - 140px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .cart__item-list > h6 {

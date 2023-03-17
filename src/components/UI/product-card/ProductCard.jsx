@@ -10,7 +10,7 @@ import { cartActions } from "../../../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
-  const { id, title, image01, price } = props.item;
+  const { id, title, image01, price, extraIngredients } = props.item;
   const dispatch = useDispatch();
 
   const addToCart = () => {
@@ -20,6 +20,7 @@ const ProductCard = (props) => {
         title,
         image01,
         price,
+        extraIngredients
       })
     );
   };

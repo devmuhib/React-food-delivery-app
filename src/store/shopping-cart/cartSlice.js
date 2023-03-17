@@ -30,19 +30,17 @@ const initialState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-
+  
   reducers: {
     // =========== add item ============
     addItem(state, action) {
       const newItem = action.payload;
-      const existingItem = state.cartItems.find(
-        (item) => item.id === newItem.id
-      );
+      const id = action.payload.id;
+      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
+      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
       state.totalQuantity++;
 
       if (!existingItem) {
-        // ===== note: if you use just redux you should not mute state array instead of clone the state array, but if you use redux toolkit that will not a problem because redux toolkit clone the array behind the scene
-
         state.cartItems.push({
           id: newItem.id,
           title: newItem.title,
@@ -50,6 +48,7 @@ const cartSlice = createSlice({
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,
+          extraIngredients: newItem.extraIngredients
         });
       } else {
         existingItem.quantity++;
@@ -69,16 +68,19 @@ const cartSlice = createSlice({
         state.totalQuantity
       );
     },
+    
+
 
     // ========= remove item ========
 
     removeItem(state, action) {
-      const id = action.payload;
-      const existingItem = state.cartItems.find((item) => item.id === id);
+      const id = action.payload.id;
+      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
+      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
       state.totalQuantity--;
 
       if (existingItem.quantity === 1) {
-        state.cartItems = state.cartItems.filter((item) => item.id !== id);
+        state.cartItems = state.cartItems.filter((item) => item !== existingItem);
       } else {
         existingItem.quantity--;
         existingItem.totalPrice =
@@ -100,11 +102,12 @@ const cartSlice = createSlice({
     //============ delete item ===========
 
     deleteItem(state, action) {
-      const id = action.payload;
-      const existingItem = state.cartItems.find((item) => item.id === id);
+      const id = action.payload.id;
+      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
+      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
 
       if (existingItem) {
-        state.cartItems = state.cartItems.filter((item) => item.id !== id);
+        state.cartItems = state.cartItems.filter((item) => item !== existingItem);
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
       }
 

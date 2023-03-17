@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
-  const { id, title, price, image01, quantity, totalPrice } = item;
+  const { id, title, price, image01, quantity, totalPrice, extraIngredients } = item;
 
   const dispatch = useDispatch();
 
@@ -18,16 +18,17 @@ const CartItem = ({ item }) => {
         title,
         price,
         image01,
+        extraIngredients
       })
     );
   };
 
   const decreaseItem = () => {
-    dispatch(cartActions.removeItem(id));
+    dispatch(cartActions.removeItem({id, extraIngredients}));
   };
 
   const deleteItem = () => {
-    dispatch(cartActions.deleteItem(id));
+    dispatch(cartActions.deleteItem({id, extraIngredients}));
   };
 
   return (
@@ -41,6 +42,19 @@ const CartItem = ({ item }) => {
             <p className=" d-flex align-items-center gap-5 cart__product-price">
               {quantity}x <span>${totalPrice}</span>
             </p>
+            <div className="d-flex flex-column">
+            {
+              extraIngredients !== undefined && (
+                Array.from(extraIngredients).map(value => {
+                  return(
+                    <p key={value} className="m-0">
+                      {value}
+                    </p>
+                  )
+                })
+                )
+              }
+              </div>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
               <span className="increase__btn" onClick={incrementItem}>
                 <i className="ri-add-line"></i>
