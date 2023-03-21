@@ -90,8 +90,6 @@ const cartSlice = createSlice({
     },
 
    
-    
-
 
     // ========= remove item ========
 

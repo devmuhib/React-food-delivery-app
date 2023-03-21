@@ -9,8 +9,8 @@ import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
   const { id, title, price, image01, quantity, totalPrice, extraIngredients } = item;
-  console.log(extraIngredients);
-  
+  let navigate = useNavigate(); 
+
   const dispatch = useDispatch();
 
   const incrementItem = () => {
@@ -29,12 +29,10 @@ const CartItem = ({ item }) => {
     dispatch(cartActions.removeItem(id));
   };
 
-  const deleteItem = () => {
+  const deleteItem = (event) => {
     dispatch(cartActions.deleteItem(id));
+    event.stopPropagation();
   };
-
-  let navigate = useNavigate(); 
-
 
   return (
     <ListGroupItem className="border-0 cart__item" onClick={() => navigate(`/pizzas/${id}`) }>
@@ -45,7 +43,7 @@ const CartItem = ({ item }) => {
           <div>
             <h6 className="cart__product-title">{title}</h6>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
-              {quantity}x <span>${totalPrice}</span>
+              {quantity}x <span>${price}</span>
             </p>
             <div className="d-flex flex-column">
             {
@@ -71,7 +69,7 @@ const CartItem = ({ item }) => {
             </div>
           </div>
 
-          <span className="delete__btn" onClick={deleteItem}>
+          <span className="delete__btn" onClick={event => deleteItem(event)}>
             <i className="ri-close-line"></i>
           </span>
         </div>
