@@ -30,7 +30,7 @@ const Carts = () => {
             <h6 className="text-center">No item added to the cart</h6>
           ) : (
             cartProducts.map((item, index) => (
-              <CartItem item={item} key={index} />
+              <CartItem item={item} key={index} onClose={toggleCart}/>
             ))
           )}
         </div>

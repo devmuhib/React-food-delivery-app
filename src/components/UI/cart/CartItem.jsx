@@ -7,13 +7,13 @@ import "../../../styles/cart-item.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
-const CartItem = ({ item }) => {
-  const { id, title, price, image01, quantity, totalPrice, extraIngredients } = item;
+const CartItem = ({ item, onClose }) => {
+  const { id, title, price, image01, quantity, extraIngredients } = item;
   let navigate = useNavigate(); 
 
   const dispatch = useDispatch();
 
-  const incrementItem = () => {
+  const incrementItem = (event) => {
     dispatch(
       cartActions.addItem({
         id,
@@ -23,10 +23,12 @@ const CartItem = ({ item }) => {
         extraIngredients
       })
     );
+    event.stopPropagation();
   };
 
-  const decreaseItem = () => {
+  const decreaseItem = (event) => {
     dispatch(cartActions.removeItem(id));
+    event.stopPropagation();
   };
 
   const deleteItem = (event) => {
@@ -34,8 +36,13 @@ const CartItem = ({ item }) => {
     event.stopPropagation();
   };
 
+  const handlePizzaSelection = () =>  {
+    navigate(`/pizzas/${id}`);
+    onClose(); 
+  }
+
   return (
-    <ListGroupItem className="border-0 cart__item" onClick={() => navigate(`/pizzas/${id}`) }>
+    <ListGroupItem className="border-0 cart__item" onClick={handlePizzaSelection}>
       <div className="cart__item-info d-flex gap-4">
         <img src={image01} alt="product-img" />
 
@@ -59,11 +66,11 @@ const CartItem = ({ item }) => {
               }
               </div>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span className="increase__btn" onClick={incrementItem}>
+              <span className="increase__btn" onClick={event => incrementItem(event)}>
                 <i className="ri-add-line"></i>
               </span>
               <span className="quantity">{quantity}</span>
-              <span className="decrease__btn" onClick={decreaseItem}>
+              <span className="decrease__btn" onClick={event => decreaseItem(event)}>
                 <i className="ri-subtract-line"></i>
               </span>
             </div>

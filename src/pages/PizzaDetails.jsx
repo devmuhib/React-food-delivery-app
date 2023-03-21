@@ -8,6 +8,7 @@ import { Container, Row, Col } from "reactstrap";
 import ExtraIngredient from '../components/ExtraIngredient/ExtraIngredient.jsx'
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/shopping-cart/cartSlice";
+import { useSelector } from "react-redux";
 
 import "../styles/product-details.css";
 import "../styles/product-card.css";
@@ -32,10 +33,17 @@ const PizzaDetails = () => {
   const [extraIngredients, setExtraIngredients] = useState([]);
 
   const product = products.find((product) => product.id === id);
+  const cartProducts = useSelector((state) => state.cart.cartItems);
 
+  
   useEffect(() => {
-    setExtraIngredients([]);
-  }, [id]);
+    const existingPizza = cartProducts.find(item => item.id === id);
+    if(existingPizza) {
+      setExtraIngredients(existingPizza.extraIngredients);
+    } else {
+      setExtraIngredients([]);
+    }
+  }, [cartProducts, id]);
 
   const [previewImg, setPreviewImg] = useState(product.image01);
   const { title, price, category, desc, image01 } = product;
@@ -116,7 +124,7 @@ const PizzaDetails = () => {
                 </p>
 
                 <button onClick={addItem} className="addTOCART__btn">
-                  Add to Cart
+                  {cartProducts.find(item => item.id === id) ? 'Update Cart' : 'Add to Cart'}
                 </button>
               </div>
             </Col>
