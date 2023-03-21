@@ -60,9 +60,9 @@
   font-weight: 600;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (min-width: 870px) {
   .cart {
-    width: 300px !important;
+    width: 25%;
   }
 }
 

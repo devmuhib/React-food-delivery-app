@@ -34,7 +34,6 @@ const PizzaDetails = () => {
   const product = products.find((product) => product.id === id);
 
   useEffect(() => {
-    console.log('aqui')
     setExtraIngredients([]);
   }, [id]);
 

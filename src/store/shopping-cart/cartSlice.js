@@ -30,16 +30,17 @@ const initialState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
+
   
   reducers: {
     // =========== add item ============
     addItem(state, action) {
       const newItem = action.payload;
       const id = action.payload.id;
-      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
-      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
-      state.totalQuantity++;
+      const extraIngredients = action.payload.extraIngredients;
+      const existingItem = state.cartItems.find((item) => item.id === id);
 
+      
       if (!existingItem) {
         state.cartItems.push({
           id: newItem.id,
@@ -50,17 +51,36 @@ const cartSlice = createSlice({
           totalPrice: newItem.price,
           extraIngredients: newItem.extraIngredients
         });
-      } else {
-        existingItem.quantity++;
-        existingItem.totalPrice =
-          Number(existingItem.totalPrice) + Number(newItem.price);
-      }
+        state.totalQuantity++;
 
+      } else if(existingItem && (JSON.stringify(existingItem.extraIngredients) === JSON.stringify(extraIngredients)))  {
+        state.totalQuantity++;
+        existingItem.quantity++;
+      } else {
+
+        const value = JSON.parse(localStorage.getItem("cartItems"));
+        let index = value.findIndex(s => s.id === existingItem.id);
+        const newValue = {
+        id: existingItem.id,
+        title: existingItem.title,
+        image01: existingItem.image01,
+        price: existingItem.price,
+        quantity: 1,
+        totalPrice: existingItem.price,
+        extraIngredients: extraIngredients
+      }
+        state.cartItems.splice(index, 1, newValue); 
+        state.totalQuantity = state.cartItems.reduce(
+          (total, item) => total + Number(item.quantity),
+          0
+        );
+      }
+     
       state.totalAmount = state.cartItems.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
-
         0
       );
+
 
       setItemFunc(
         state.cartItems.map((item) => item),
@@ -68,19 +88,20 @@ const cartSlice = createSlice({
         state.totalQuantity
       );
     },
+
+   
     
 
 
     // ========= remove item ========
 
     removeItem(state, action) {
-      const id = action.payload.id;
-      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
-      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
+      const id = action.payload;
+      const existingItem = state.cartItems.find((item) => item.id === id);
       state.totalQuantity--;
 
       if (existingItem.quantity === 1) {
-        state.cartItems = state.cartItems.filter((item) => item !== existingItem);
+        state.cartItems = state.cartItems.filter((item) => item.id !== id);
       } else {
         existingItem.quantity--;
         existingItem.totalPrice =
@@ -102,12 +123,11 @@ const cartSlice = createSlice({
     //============ delete item ===========
 
     deleteItem(state, action) {
-      const id = action.payload.id;
-      const extraIngredients = JSON.stringify(action.payload.extraIngredients);
-      const existingItem = state.cartItems.find((item) => (item.id === id && JSON.stringify(item.extraIngredients)=== extraIngredients));
+      const id = action.payload;
+      const existingItem = state.cartItems.find((item) => item.id === id);
 
       if (existingItem) {
-        state.cartItems = state.cartItems.filter((item) => item !== existingItem);
+        state.cartItems = state.cartItems.filter((item) => item.id !== id);
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
       }
 

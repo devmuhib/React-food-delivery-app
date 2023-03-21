@@ -4,6 +4,11 @@
   object-fit: cover;
 }
 
+.cart__item:hover {
+  background-color: rgba(230, 230, 230, 0.994);
+  cursor: pointer;
+}
+
 .cart__product-title {
   font-size: 0.8rem;
   font-weight: 600;

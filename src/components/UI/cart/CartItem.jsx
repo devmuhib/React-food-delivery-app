@@ -1,5 +1,6 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 import "../../../styles/cart-item.css";
 
@@ -8,7 +9,8 @@ import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
   const { id, title, price, image01, quantity, totalPrice, extraIngredients } = item;
-
+  console.log(extraIngredients);
+  
   const dispatch = useDispatch();
 
   const incrementItem = () => {
@@ -24,15 +26,18 @@ const CartItem = ({ item }) => {
   };
 
   const decreaseItem = () => {
-    dispatch(cartActions.removeItem({id, extraIngredients}));
+    dispatch(cartActions.removeItem(id));
   };
 
   const deleteItem = () => {
-    dispatch(cartActions.deleteItem({id, extraIngredients}));
+    dispatch(cartActions.deleteItem(id));
   };
 
+  let navigate = useNavigate(); 
+
+
   return (
-    <ListGroupItem className="border-0 cart__item">
+    <ListGroupItem className="border-0 cart__item" onClick={() => navigate(`/pizzas/${id}`) }>
       <div className="cart__item-info d-flex gap-4">
         <img src={image01} alt="product-img" />
 
@@ -47,9 +52,9 @@ const CartItem = ({ item }) => {
               extraIngredients !== undefined && (
                 Array.from(extraIngredients).map(value => {
                   return(
-                    <p key={value} className="m-0">
+                    <span key={value} className="m-0">
                       {value}
-                    </p>
+                    </span>
                   )
                 })
                 )
