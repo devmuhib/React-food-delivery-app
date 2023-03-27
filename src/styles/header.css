@@ -7,6 +7,11 @@
 .logo {
   text-align: center;
 }
+
+.logo:hover {
+  cursor: pointer;
+}
+
 .logo img {
   width: calc(100% - 60%);
   object-fit: contain;
