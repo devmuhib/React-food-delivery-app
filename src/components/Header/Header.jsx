@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
@@ -35,6 +36,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+  let navigate = useNavigate(); 
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
@@ -59,7 +61,7 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
-          <div className="logo">
+          <div className="logo" onClick={() => navigate('/home')}>
             <img src={logo} alt="logo" />
             <h5>Tasty Treat</h5>
           </div>
