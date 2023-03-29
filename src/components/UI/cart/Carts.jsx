@@ -6,7 +6,6 @@ import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
 
-import "../../../styles/common.css";
 import "../../../styles/shopping-cart.css";
 
 const Carts = () => {
@@ -20,9 +19,9 @@ const Carts = () => {
   return (
     <div className="cart__container" onClick={toggleCart}>
       <ListGroup onClick={(event) => event.stopPropagation()} className="cart">
-        <div className="close__button">
+        <div className="cart__closeButton">
           <span onClick={toggleCart}>
-            <i class="ri-close-fill"></i>
+            <i className="ri-close-fill"></i>
           </span>
         </div>
 

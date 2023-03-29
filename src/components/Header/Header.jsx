@@ -42,6 +42,8 @@ const Header = () => {
     dispatch(cartUiActions.toggle());
   };
 
+  console.log(menuRef?.current?.classList.value);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
@@ -71,9 +73,9 @@ const Header = () => {
               className="menu d-flex align-items-center gap-5"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="close__button">
+              <div className="header__closeButton">
                 <span onClick={toggleMenu}>
-                  <i class="ri-close-fill"></i>
+                  <i className="ri-close-fill"></i>
                 </span>
               </div>
               {nav__links.map((item, index) => (
@@ -94,18 +96,18 @@ const Header = () => {
           {/* ======== nav right icons ========= */}
           <div className="nav__right d-flex align-items-center gap-4">
             <span className="cart__icon" onClick={toggleCart}>
-              <i class="ri-shopping-basket-line"></i>
+              <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
             <span className="user">
               <Link to="/login">
-                <i class="ri-user-line"></i>
+                <i className="ri-user-line"></i>
               </Link>
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
-              <i class="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>

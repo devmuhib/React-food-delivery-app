@@ -22,7 +22,7 @@ const Home = () => {
 
                 <button className="order__btn d-flex align-items-center justify-content-between ">
                   <Link to="/pizzas">
-                    Menu <i class="ri-arrow-right-s-line"></i>
+                    Menu <i className="ri-arrow-right-s-line"></i>
                   </Link>
                 </button>
               </div>

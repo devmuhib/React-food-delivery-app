@@ -136,6 +136,32 @@
   }
 }
 
+.header__closeButton {
+  width: fit-content;
+  height: 60px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0rem;
+  margin: 0.5rem 0;
+  display: none;
+}
+
+.header__closeButton span i {
+  font-size: 1.1rem;
+  background: #212245;
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  .close__button {
+    display: flex;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;

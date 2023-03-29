@@ -17,6 +17,7 @@ th {
 .cart__page-btn {
   display: flex;
   flex-wrap: nowrap;
+  margin: 2rem 0;
 }
 
 .cart__page-btn button a:hover {
