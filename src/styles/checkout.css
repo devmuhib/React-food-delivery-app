@@ -1,8 +1,6 @@
 .checkoutMessage {
-  display: flex;
-  margin: 1rem;
-  flex-direction: column;
-  gap: 2rem;
+  width: fit-content;
+  margin: 1rem auto;
 }
 
 .checkoutIcon {
@@ -12,21 +10,13 @@
 }
 
 .checkoutTitleContainer {
-  gap: 0.5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
 }
 
-@media only screen and (min-width: 768px) {
-  .checkoutMessage > h3,
-  span {
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .checkoutTitleContainer {
-    justify-content: flex-start;
+@media only screen and (max-width: 480px) {
+  .checkoutMessage {
+    margin: 1rem 1rem;
   }
 }
