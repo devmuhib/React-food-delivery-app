@@ -41,14 +41,6 @@
   color: #df2020 !important;
 }
 
-.cart__icon i,
-.user i,
-.mobile__menu i {
-  font-size: 1.3rem;
-  color: #212245;
-  cursor: pointer;
-}
-
 .cart__icon {
   position: relative;
 }
@@ -123,12 +115,6 @@
 
   .mobile__menu {
     display: block;
-  }
-
-  .cart__icon i,
-  .user i,
-  .mobile__menu i {
-    font-size: 1rem;
   }
 
   .show__menu {
