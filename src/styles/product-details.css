@@ -82,6 +82,33 @@
   }
 }
 
+@keyframes animation {
+  from {
+    top: 0;
+  }
+  to {
+    top: 2rem;
+  }
+}
+
+.updateCartNotifiation {
+  width: -webkit-fill-available;
+  top: 2rem;
+  height: 3rem;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #4BB543;
+  border-radius: 10px;
+  position: fixed;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 9999;
+  animation: 1s animation;
+}
+
 @media only screen and (max-width: 576px) {
   .product__images {
     display: flex;

@@ -31,9 +31,12 @@ const PizzaDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [extraIngredients, setExtraIngredients] = useState([]);
-
+  const [isUpdateNotificationDisplayed, setIsUpdateNotificationDisplayed] = useState(false);
   const product = products.find((product) => product.id === id);
   const cartProducts = useSelector((state) => state.cart.cartItems);
+  const [previewImg, setPreviewImg] = useState(product.image01);
+  const { title, price, category, desc, image01 } = product;
+  const relatedProduct = products.filter((item) => category === item.category);
 
   
   useEffect(() => {
@@ -45,12 +48,13 @@ const PizzaDetails = () => {
     }
   }, [cartProducts, id]);
 
-  const [previewImg, setPreviewImg] = useState(product.image01);
-  const { title, price, category, desc, image01 } = product;
-
-  const relatedProduct = products.filter((item) => category === item.category);
   
   const addItem = () => {
+    setIsUpdateNotificationDisplayed(true);
+      setTimeout(function(){
+        setIsUpdateNotificationDisplayed(false);
+      },3000)
+    
     dispatch(
       cartActions.addItem({
         id,
@@ -60,6 +64,7 @@ const PizzaDetails = () => {
         extraIngredients
       })
       );
+
     };
     
     useEffect(() => {
@@ -77,13 +82,20 @@ const PizzaDetails = () => {
 
   return (
     <Helmet title="Product-details">
+      {isUpdateNotificationDisplayed && (
+        <div className="updateCartNotifiation">
+          <span>You successfully updated your cart!</span>
+        </div>
+      )
+      }
+
       <CommonSection title={title} />
 
       <section>
         <Container>
           <Row>
             <Col lg="2" md="2">
-              <div className="product__images ">
+              <div className="product__images">
                 <div
                   className="img__item mb-3"
                   onClick={() => setPreviewImg(product.image01)}
