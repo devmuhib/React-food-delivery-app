@@ -7,7 +7,6 @@ import PizzaDetails from "../pages/PizzaDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 
-
 const Routers = () => {
   return (
     <Routes>

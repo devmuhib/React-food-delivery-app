@@ -1,32 +1,32 @@
 .checkoutMessage {
-    display: flex;
-    margin: 1rem;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .checkoutIcon {
-    width: 2rem;
-    color: #4BB543;
-    height: 2rem;
+  width: 2rem;
+  color: #4bb543;
+  height: 2rem;
 }
 
 .checkoutTitleContainer {
-    gap: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
-    .checkoutMessage > h3, span{
-        margin: 0 auto;
-    }    
-}    
+  .checkoutMessage > h3,
+  span {
+    margin: 0 auto;
+  }
+}
 
 @media only screen and (max-width: 768px) {
-    .checkoutTitleContainer {
-        justify-content: flex-start;
-    }    
-}    
-
+  .checkoutTitleContainer {
+    justify-content: flex-start;
+  }
+}

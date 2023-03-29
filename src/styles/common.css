@@ -1,0 +1,18 @@
+.close__button {
+  width: fit-content;
+  height: 60px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0rem;
+  margin: 0.5rem 0;
+}
+
+.close__button span i {
+  font-size: 1.1rem;
+  background: #212245;
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
