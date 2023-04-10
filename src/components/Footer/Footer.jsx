@@ -7,7 +7,7 @@ import "../../styles/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
       <Container>
@@ -69,7 +69,7 @@ const Footer = () => {
         <Row className="mt-5">
           <Col lg="6" md="6">
             <p className="copyright__text">
-              Copyright - {year}, website made by Muhibur Rahman. All Rights
+              Copyright - {currentYear}, website made by Muhibur Rahman. All Rights
               Reserved.
             </p>
           </Col>
