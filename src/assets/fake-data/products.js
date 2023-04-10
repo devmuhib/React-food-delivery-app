@@ -13,7 +13,7 @@ import product_03_image_03 from "../images/product_3.3.jpg";
 
 import product_04_image_01 from "../images/product_4.1.jpg";
 import product_04_image_02 from "../images/product_4.2.jpg";
-import product_04_image_03 from "../images/product_4.3.jpg";
+import product_04_image_03 from "../images/product_4.3.png";
 
 import product_05_image_01 from "../images/product_04.jpg";
 import product_05_image_02 from "../images/product_08.jpg";
