@@ -1,0 +1,52 @@
+.cart__item-info img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+.cart__item:hover {
+  background-color: rgba(230, 230, 230, 0.994);
+  cursor: pointer;
+}
+
+.cart__product-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cart__product-price {
+  font-size: 0.8rem;
+}
+
+.cart__product-price span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #df2020;
+}
+
+.increase__decrease-btn {
+  background: #fde4e4;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.increase__btn,
+.decrease__btn {
+  cursor: pointer;
+}
+
+.delete__btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cart__item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #fde4e4;
+}
+
+@media only screen and (max-width: 576px) {
+  .delete__btn {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,69 @@
+.hero__content {
+  padding-top: 70px;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  line-height: 55px;
+}
+
+.hero__title span {
+  color: #df2020;
+}
+
+.hero__content p {
+  font-size: 1rem;
+  line-height: 30px;
+  color: #777;
+}
+
+.order__btn {
+  border: none;
+  outline: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #df2020;
+  color: #fff;
+  font-weight: 600;
+}
+
+.order__btn:hover {
+  background: #212245;
+}
+
+.order__btn:hover a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero__img {
+  margin: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero__content h5 {
+    font-size: 1rem;
+  }
+
+  .hero__content p {
+    font-size: 0.8rem;
+    line-height: 25px;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero__content {
+    text-align: center;
+  }
+
+  .order__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

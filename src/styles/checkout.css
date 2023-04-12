@@ -1,0 +1,22 @@
+.checkoutMessage {
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+.checkoutIcon {
+  width: 2rem;
+  color: #4bb543;
+  height: 2rem;
+}
+
+.checkoutTitleContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .checkoutMessage {
+    margin: 1rem 1rem;
+  }
+}
