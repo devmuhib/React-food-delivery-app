@@ -38,6 +38,10 @@
   font-size: 0.9rem;
 }
 
+.addTOCART__btn:hover {
+  background: #ff5050; /* Updated background color on hover */
+}
+
 @media only screen and (max-width: 992px) {
   .product__content h5 a {
     font-size: 0.8rem;
