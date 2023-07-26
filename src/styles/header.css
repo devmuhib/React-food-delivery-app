@@ -5,11 +5,14 @@
   top: 0;
 }
 
-@keyframes animation {
-  from {
-    top: -100px;
+@keyframes navBarAnim {
+  0% {
+    top: 0;
   }
-  to {
+  50% {
+    top: 20px;
+  }
+  100% {
     top: 0px;
   }
 }
@@ -21,8 +24,8 @@
   background: #fff;
   z-index: 99999;
   box-shadow: 5px 5px 15px -5px #d7d6d6;
-  animation-name: animation;
-  animation-duration: 0.5s;
+  animation-name: navBarAnim;
+  animation-duration: 1s;
 }
 
 .logo {
@@ -35,6 +38,7 @@
 
 .logo img {
   width: calc(100% - 60%);
+  aspect-ratio: 1;
   object-fit: contain;
   margin-top: -40px;
 }
@@ -93,7 +97,6 @@
   }
   .logo h5 {
     font-size: 0.8rem;
-    margin-top: -15px;
   }
 
   .navigation {
@@ -154,11 +157,11 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 992px) {
-  .close__button {
-    display: flex;
-  }
+.close__button {
+  display: flex;
 }
+/* @media only screen and (max-width: 992px) {
+} */
 
 @media only screen and (max-width: 768px) {
   .header {

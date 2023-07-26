@@ -15,7 +15,7 @@
     "react-paginate": "^8.1.4",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "reactstrap": "^9.0.1",
     "redux-logger": "^3.0.6",
     "remixicon": "^2.5.0",
