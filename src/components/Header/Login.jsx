@@ -6,7 +6,7 @@ const Login = () => {
     useAuth0();
 
   React.useEffect(() => {
-    console.log(isAuthenticated);
+    console.log(error);
   }, []);
 
   return isAuthenticated ? (

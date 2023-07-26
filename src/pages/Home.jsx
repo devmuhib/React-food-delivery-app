@@ -29,7 +29,11 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="hero__img">
-                <img src={guyImg} alt="delivery-guy" className="w-100" />
+                <img
+                  src={guyImg}
+                  alt="delivery-guy"
+                  className="w-100 delivery-guy"
+                />
               </div>
             </Col>
           </Row>
