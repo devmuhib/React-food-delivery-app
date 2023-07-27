@@ -128,10 +128,7 @@
     font-size: 0.9rem;
   }
 
-  .mobile__menu {
-    display: block;
-  }
-
+  .mobile__menu,
   .show__menu {
     display: block;
   }
@@ -145,6 +142,7 @@
   top: 0.5rem;
   right: 0rem;
   margin: 0.5rem 0;
+  display: none;
 }
 
 .header__closeButton span i {
@@ -158,8 +156,6 @@
 .close__button {
   display: flex;
 }
-/* @media only screen and (max-width: 992px) {
-} */
 
 @media only screen and (max-width: 768px) {
   .header {
@@ -182,11 +178,16 @@
   }
 }
 
+.header__closeButton {
+  display: block;
+}
+
 .close__button {
   width: fit-content;
   height: 60px;
   padding: 10px 20px;
   position: absolute;
+  display: block;
   top: 0.5rem;
   right: 0rem;
 }
