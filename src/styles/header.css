@@ -145,15 +145,13 @@
   top: 0.5rem;
   right: 0rem;
   margin: 0.5rem 0;
-  display: none;
 }
 
 .header__closeButton span i {
   font-size: 1.1rem;
-  background: #212245;
   padding: 5px;
   border-radius: 50%;
-  color: #fff;
+  color: #212245;
   cursor: pointer;
 }
 
