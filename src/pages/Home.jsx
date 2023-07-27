@@ -1,9 +1,8 @@
 import React from "react";
-import Helmet from "../components/Helmet/Helmet.js";
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
-import { Link } from "react-router-dom";
-
+import Helmet from "../components/Helmet/Helmet.js";
 import guyImg from "../assets/images/delivery-guy.png";
 import "../styles/hero-section.css";
 
@@ -30,7 +29,11 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="hero__img">
-                <img src={guyImg} alt="delivery-guy" className="w-100" />
+                <img
+                  src={guyImg}
+                  alt="delivery-guy"
+                  className="w-100 delivery-guy"
+                />
               </div>
             </Col>
           </Row>

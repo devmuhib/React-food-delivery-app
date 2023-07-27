@@ -41,6 +41,24 @@
   margin: 40px;
 }
 
+@keyframes deliveryGuy {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.delivery-guy {
+  animation-name: deliveryGuy;
+  animation-duration: 3s;
+}
+
 @media only screen and (max-width: 768px) {
   .hero__content h5 {
     font-size: 1rem;

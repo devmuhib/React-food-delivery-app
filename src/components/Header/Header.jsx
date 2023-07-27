@@ -1,33 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+import logo from "../../assets/images/res-logo.png";
+import Login from "./Login";
+import { nav__links } from "../../data/navLinks";
 
 import "../../styles/header.css";
-
-const nav__links = [
-  {
-    display: "Home",
-    path: "/home",
-  },
-  {
-    display: "Foods",
-    path: "/pizzas",
-  },
-  {
-    display: "Cart",
-    path: "/cart",
-  },
-  {
-    display: "Contact",
-    path: "/contact",
-  },
-];
 
 const Header = () => {
   const menuRef = useRef(null);
@@ -41,8 +23,6 @@ const Header = () => {
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
-
-  console.log(menuRef?.current?.classList.value);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -95,11 +75,12 @@ const Header = () => {
 
           {/* ======== nav right icons ========= */}
           <div className="nav__right d-flex align-items-center gap-4">
+            <Login />
             <span className="cart__icon" onClick={toggleCart}>
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
-            
+
             <span className="mobile__menu" onClick={toggleMenu}>
               <i className="ri-menu-line"></i>
             </span>

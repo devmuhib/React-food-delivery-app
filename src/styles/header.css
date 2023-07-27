@@ -5,11 +5,14 @@
   top: 0;
 }
 
-@keyframes animation {
-  from {
-    top: -100px;
+@keyframes navBarAnim {
+  0% {
+    top: 0;
   }
-  to {
+  50% {
+    top: 20px;
+  }
+  100% {
     top: 0px;
   }
 }
@@ -21,7 +24,7 @@
   background: #fff;
   z-index: 99999;
   box-shadow: 5px 5px 15px -5px #d7d6d6;
-  animation-name: animation;
+  animation-name: navBarAnim;
   animation-duration: 0.5s;
 }
 
@@ -35,6 +38,7 @@
 
 .logo img {
   width: calc(100% - 60%);
+  aspect-ratio: 1;
   object-fit: contain;
   margin-top: -40px;
 }
@@ -93,7 +97,6 @@
   }
   .logo h5 {
     font-size: 0.8rem;
-    margin-top: -15px;
   }
 
   .navigation {
@@ -125,10 +128,7 @@
     font-size: 0.9rem;
   }
 
-  .mobile__menu {
-    display: block;
-  }
-
+  .mobile__menu,
   .show__menu {
     display: block;
   }
@@ -147,17 +147,14 @@
 
 .header__closeButton span i {
   font-size: 1.1rem;
-  background: #212245;
   padding: 5px;
   border-radius: 50%;
-  color: #fff;
+  color: #212245;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 992px) {
-  .close__button {
-    display: flex;
-  }
+.close__button {
+  display: flex;
 }
 
 @media only screen and (max-width: 768px) {
@@ -181,11 +178,16 @@
   }
 }
 
+.header__closeButton {
+  display: block;
+}
+
 .close__button {
   width: fit-content;
   height: 60px;
   padding: 10px 20px;
   position: absolute;
+  display: block;
   top: 0.5rem;
   right: 0rem;
 }
